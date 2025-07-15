@@ -1,10 +1,12 @@
-### Django Example Project
+# Deploy Django on Seenode in seconds
 
-# Seenode Django Sample Project
+This is a repo for deploying a Django project on [Seenode](https://seenode.com).
 
-This is a minimal Django project configured for production deployment on [Seenode](https://seenode.com).
+It includes a single "Hello, Seenode" view and is pre-configured to be served with Gunicorn, the recommended production-ready web server.
 
-It includes a single "Hello, World" view and is pre-configured to be served with Gunicorn, the recommended production-ready web server.
+### Deploy in minutes
+View our [guide on deploying django apps](https://seenode.com/docs/services/web-services/framework-guides/python/django/) on [seenode](https://seenode.com) in seconds.
+
 
 ## Deploying on Seenode
 
@@ -25,8 +27,5 @@ Seenode simplifies database management.
 3.  Under "Database Connections", link your newly created database.
 4.  Seenode will automatically inject the `DATABASE_URL` environment variable directly into your service, which Django can use to connect securely.
 
-
-### Deploy in minutes
-View our [guide on deploying django apps](https://seenode.com/docs/services/web-services/framework-guides/python/django/) on [seenode](https://seenode.com) in seconds.
 
 ***
