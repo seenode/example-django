@@ -1,22 +1,32 @@
-# Django Sample Project
+### Django Example Project
 
-This is a minimal Django project intended to be used as a sample for deployment guides.
-It contains a single app with a view that returns a simple "Hello, world" message.
+# Seenode Django Sample Project
 
-The project is configured to be served using gunicorn.
+This is a minimal Django project configured for production deployment on [Seenode](https://seenode.com).
 
-## Configuration
+It includes a single "Hello, World" view and is pre-configured to be served with Gunicorn, the recommended production-ready web server.
 
-The project is configured using environment variables. You will need to set the following:
+## Deploying on Seenode
 
-- `SECRET_KEY`: A long, random string used for cryptographic signing.
-- `DEBUG`: Set to `True` for development, `False` for production. Defaults to `False`.
-- `DATABASE_URL`: The connection string for your database. Defaults to a local SQLite database.
+1.  **Create Service**: From the [Seenode dashboard](https://cloud.seenode.com), create a new **Web Service** and connect it to this Git repository.
+2.  **Configure Settings**: Seenode will auto-detect a Python project. You can use the following settings:
+    *   **Build Command**: `pip install -r requirements.txt`
+    *   **Start Command**: `gunicorn sample_project.wsgi --bind 0.0.0.0:$PORT`
+3.  **Add Environment Variables**: In your service's **Environment** tab, add the following:
+    *   `SECRET_KEY`: A long, random string for cryptographic signing.
+    *   `DEBUG`: Set to `False` for production.
+4.  **Deploy**: Click **Create Web Service**. Your app will be live shortly.
 
-For local development, you can set these in your shell:
+### Connecting a Database
 
-```bash
-export SECRET_KEY='a-very-secret-key'
-export DEBUG=True
-export DATABASE_URL='sqlite:///db.sqlite3'
-``` 
+Seenode simplifies database management.
+1.  Create a managed PostgreSQL or MySQL database from the **Databases** tab on the dashboard.
+2.  In your Web Service settings, go to the **Environment** tab.
+3.  Under "Database Connections", link your newly created database.
+4.  Seenode will automatically inject the `DATABASE_URL` environment variable directly into your service, which Django can use to connect securely.
+
+
+### Deploy in minutes
+View our [guide on deploying django apps](https://seenode.com/docs/services/web-services/framework-guides/python/django/) on [seenode](https://seenode.com) in seconds.
+
+***
