@@ -5,7 +5,7 @@ This is a sample repository for deploying a Django project on [Seenode](https://
 It includes a single "Hello, World" view and is pre-configured to be served with Gunicorn, the recommended production-ready web server.
 
 ### Deploy in minutes
-View our [guide on deploying Django apps](https://seenode.com/docs/services/web-services/framework-guides/python/django/) on [Seenode](https://seenode.com).
+View our [guide on deploying Django apps](https://seenode.com/docs/frameworks/python/django/) on [Seenode](https://seenode.com).
 
 
 ## Deploying on Seenode
