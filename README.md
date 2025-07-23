@@ -14,6 +14,7 @@ View our [guide on deploying Django apps](https://seenode.com/docs/frameworks/py
 2.  **Configure Settings**: In your service settings on Seenode, make sure the following are set:
     *   **Build Command**: `pip install -r requirements.txt`
     *   **Start Command**: `gunicorn project.wsgi --bind 0.0.0.0:80`
+    Note: This example is configured to listen on port 80. Ensure your application code binds to this port, or whatever port you set when deploying your application.
 3.  **Add Environment Variables**: In your service's **Environment** tab, add the following:
     *   `SECRET_KEY`: A long, random string for cryptographic signing.
     *   `DEBUG`: Set to `False` for production.
@@ -26,7 +27,5 @@ Seenode simplifies database management.
 2.  In your Web Service settings, go to the **Environment** tab.
 3.  Under "Database Connections", link your newly created database.
 4.  Seenode will automatically inject the `DATABASE_URL` environment variable directly into your service, which Django can use to connect securely.
-
-*   **Port Binding**: This example is configured to listen on port 80. Ensure your application code binds to this port, or whatever port you set when deploying your application.
 
 ***
